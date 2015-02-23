@@ -160,6 +160,11 @@ function getActiveThemePaths() {
 }
 
 frontendControllers = {
+    archive: function(req, res, next) {
+        api.posts.browse({ limit: 250 }).then(function(result) {
+            res.render('archive', { posts: result.posts });
+        });        
+    },
     homepage: function (req, res, next) {
         // Parse the page number
         var pageParam = req.params.page !== undefined ? parseInt(req.params.page, 10) : 1,

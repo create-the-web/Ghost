@@ -48,6 +48,8 @@ frontendRoutes = function () {
     router.get('/author/:slug/page/:page/', frontend.author);
     router.get('/author/:slug/', frontend.author);
 
+    router.get('/archive', frontend.archive);
+    
     // Default
     router.get('/page/:page/', frontend.homepage);
     router.get('/', frontend.homepage);
